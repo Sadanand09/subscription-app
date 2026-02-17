@@ -8,6 +8,7 @@ export interface Subscription {
   id: string;
   icon?: any;
   name: string;
+  plan: string;
   price: number;
   billing: string;
   date?: string;

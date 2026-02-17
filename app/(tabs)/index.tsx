@@ -12,7 +12,10 @@ import { icons } from "@/constants/icons";
 export default function Home() {
   return (
     <SafeAreaView className="flex-1 p-6 bg-[#FFF9E3]">
-      <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 120 }}
+        showsVerticalScrollIndicator={false}
+      >
         <View className="flex-row justify-between items-center">
           <View className="flex-row">
             <Image source={images.avatar} className="w-16 h-16 rounded-full" />

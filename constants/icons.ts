@@ -11,6 +11,9 @@ import dropbox from "@/assets/icons/dropbox.png";
 import openai from "@/assets/icons/openai.png";
 import adobe from "@/assets/icons/adobe.png";
 import medium from "@/assets/icons/medium.png";
+import figma from "@/assets/icons/figma.png";
+import spotify from "@/assets/icons/spotify.png";
+import github from "@/assets/icons/github.png";
 
 export const icons = {
   home,
@@ -26,4 +29,7 @@ export const icons = {
   openai,
   adobe,
   medium,
+  figma,
+  spotify,
+  github,
 };

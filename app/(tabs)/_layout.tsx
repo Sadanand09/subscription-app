@@ -43,8 +43,6 @@ export default function TabsLayout() {
             justifyContent: "center",
             alignItems: "center",
             paddingVertical: 12,
-            height: 16,
-            width: 16,
           },
         }}
       >
