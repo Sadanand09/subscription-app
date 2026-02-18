@@ -8,13 +8,13 @@ interface Props {
 export const BalanceCard = ({ amount, date }: Props) => (
   <View className="bg-[#EA7A53] rounded-se-3xl rounded-tr-3xl gap-5 mb-4 p-6">
     <View className="">
-      <Text className="text-white/80 font-sans-semibold text-3xl">Balance</Text>
+      <Text className="text-white/80 font-sans-semibold text-xl">Balance</Text>
     </View>
     <View className="flex flex-row justify-between items-center">
-      <Text className="text-white text-5xl font-sans-extrabold">
+      <Text className="text-white text-4xl font-sans-extrabold">
         ${amount.toFixed(2)}
       </Text>
-      <Text className="text-white font-sans-medium text-2xl">{date}</Text>
+      <Text className="text-white font-sans-medium text-xl">{date}</Text>
     </View>
   </View>
 );
