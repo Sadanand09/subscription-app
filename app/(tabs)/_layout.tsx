@@ -23,7 +23,6 @@ const TabIcon = ({ focused, icon }: TabIconProps) => {
 
 export default function TabsLayout() {
   return (
-    // 👇 THIS is where className goes
     <View className="flex-1">
       <Tabs
         screenOptions={{
@@ -59,7 +58,7 @@ export default function TabsLayout() {
           name="subscriptions"
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.activity} />
+              <TabIcon focused={focused} icon={icons.wallet} />
             ),
           }}
         />
@@ -68,7 +67,7 @@ export default function TabsLayout() {
           name="insights"
           options={{
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.wallet} />
+              <TabIcon focused={focused} icon={icons.activity} />
             ),
           }}
         />

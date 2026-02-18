@@ -62,4 +62,22 @@ export const subscriptions: Subscription[] = [
     date: "July 13, 2:00",
     color: "#8BCBB8",
   },
+  {
+    id: "4",
+    icon: icons.medium,
+    name: "Claude",
+    price: 9.84,
+    billing: "per month",
+    date: "June 25, 12:00",
+    color: "#F9D84A",
+  },
+  {
+    id: "5",
+    icon: icons.medium,
+    name: "Canva",
+    price: 43.89,
+    billing: "per month",
+    date: "June 30, 16:00",
+    color: "#8BCBB8",
+  },
 ];

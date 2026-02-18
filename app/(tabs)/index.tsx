@@ -34,7 +34,10 @@ export default function Home() {
           <SectionHeader title="Upcoming" action="View all" />
         </View>
 
-        <ScrollView horizontal className="">
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
           {upcoming.map((item) => (
             <UpcomingCard key={item.id} {...item} />
           ))}
