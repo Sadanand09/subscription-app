@@ -6,7 +6,7 @@ type Props = {
   icon?: any;
   price: number;
   billing: string;
-  plan: string;
+  plan?: string;
   expanded: boolean;
   onPress: () => void;
 };

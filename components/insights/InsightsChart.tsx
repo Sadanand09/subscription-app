@@ -1,6 +1,5 @@
 import { View, Text } from "react-native";
 import { BarChart } from "react-native-gifted-charts";
-import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { barData } from "@/constants/data/insights";
 
@@ -51,8 +50,6 @@ export const InsightsChart = () => {
         isAnimated
         animationDuration={600}
 
-        /* Gradient support */
-        LinearGradient={LinearGradient}
       />
     </View>
   );

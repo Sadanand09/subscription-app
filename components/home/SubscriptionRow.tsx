@@ -6,7 +6,7 @@ interface Props {
   date: string;
   price: number;
   billing: string;
-  color: string;
+  color?: string;
 }
 
 export const SubscriptionRow = ({
@@ -18,7 +18,7 @@ export const SubscriptionRow = ({
   color,
 }: Props) => (
   <View
-    style={{ backgroundColor: color }}
+    style={{ backgroundColor: color ?? "#FFF8E7" }}
     className="rounded-se-3xl rounded-tr-3xl p-4 flex-row justify-between items-center"
   >
     <View className="flex-row items-center gap-3">
