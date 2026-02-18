@@ -13,7 +13,7 @@ const Header = ({ title }: Props) => {
       <TouchableOpacity onPress={() => router.back()} className="h-16 w-16">
         <Image source={icons.back} className="w-full h-full" />
       </TouchableOpacity>
-      <Text className="text-2xl font-semibold">{title}</Text>
+      <Text className="text-2xl font-sans-bold">{title}</Text>
       <TouchableOpacity className="h-16 w-16">
         <Image source={icons.menu} className="w-full h-full" />
       </TouchableOpacity>

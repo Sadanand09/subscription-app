@@ -10,7 +10,7 @@ export const InsightsChart = () => {
   const chartData = barData.map((item, index) => ({
     value: item.value,
     label: item.label,
-    frontColor: selectedIndex === index ? "#EA7A53" : "#081126",
+    frontColor: selectedIndex === index ? "#EA7A53" : "#081226",
     onPress: () => setSelectedIndex(index),
   }));
 
@@ -59,7 +59,7 @@ export const InsightsChart = () => {
               >
                 <Text
                   style={{
-                    color: "#000000",
+                    color: "#EA7A53",
                     fontSize: 14,
                     fontWeight: "600",
                     textAlign: "center",

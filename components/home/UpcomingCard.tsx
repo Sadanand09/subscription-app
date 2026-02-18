@@ -12,11 +12,11 @@ export const UpcomingCard = ({ name, price, daysLeft, icon }: Props) => (
     <View className="flex flex-row items-center gap-3">
       <Image source={icon} className="w-14 h-14" />
       <View>
-        <Text className="text-xl font-semibold">${price.toFixed(2)}</Text>
-        <Text className="text-sm font-semibold text-black/60">{daysLeft} days left</Text>
+        <Text className="text-lg font-sans-bold">${price.toFixed(2)}</Text>
+        <Text className="text-sm font-sans-semibold text-black/60">{daysLeft} days left</Text>
       </View>
     </View>
 
-    <Text className="mt-2 font-semibold text-lg">{name}</Text>
+    <Text className="mt-2 font-sans-bold text-lg">{name}</Text>
   </View>
 );

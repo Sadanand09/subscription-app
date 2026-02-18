@@ -19,7 +19,7 @@ export default function Home() {
         <View className="flex-row justify-between items-center">
           <View className="flex-row">
             <Image source={images.avatar} className="w-16 h-16 rounded-full" />
-            <Text className="text-2xl font-semibold my-auto ml-4">
+            <Text className="text-2xl font-sans-bold my-auto ml-4">
               {user.name}
             </Text>
           </View>

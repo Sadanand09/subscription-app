@@ -32,14 +32,20 @@ export const SubscriptionItem = ({
         <View className="flex-row items-center gap-3">
           <Image source={icon} className="w-16 h-16 rounded-lg" />
           <View>
-            <Text className="text-lg font-semibold">{name}</Text>
-            <Text className="text-sm text-black/60">{plan}</Text>
+            <Text className="text-lg mb-1 font-sans-bold">{name}</Text>
+            <Text className="text-sm font-sans-semibold text-black/60">
+              {plan}
+            </Text>
           </View>
         </View>
 
         <View className="items-end">
-          <Text className="text-lg font-semibold">${price.toFixed(2)}</Text>
-          <Text className="text-sm text-black/60">{billing}</Text>
+          <Text className="text-lg mb-1 font-sans-bold">
+            ${price.toFixed(2)}
+          </Text>
+          <Text className="text-sm font-sans-medium text-black/60">
+            {billing}
+          </Text>
         </View>
       </View>
 
@@ -49,27 +55,31 @@ export const SubscriptionItem = ({
           <View className="flex-col justify-between gap-6">
             <View className="flex-row justify-between items-center">
               <View className="flex-row gap-2">
-                <Text className="text-base text-black/60">Payment info:</Text>
-                <Text className="font-medium">*****8530</Text>
+                <Text className="text-base font-sans-medium text-black/60">
+                  Payment info:
+                </Text>
+                <Text className="font-sans-bold">*****8530</Text>
               </View>
               <Pressable className="border border-black/30 rounded-full py-1 px-5  items-center">
-                <Text className="font-medium">Manage</Text>
+                <Text className="font-sans-bold">Manage</Text>
               </Pressable>
             </View>
 
             <View className="flex-row justify-between items-center">
               <View className="flex-row gap-2">
-                <Text className="text-base text-black/60">Plan details:</Text>
-                <Text className="font-medium">Premium</Text>
+                <Text className="text-base font-sans-medium text-black/60">
+                  Plan details:
+                </Text>
+                <Text className="font-sans-bold">Premium</Text>
               </View>
               <Pressable className="border border-black/30 rounded-full py-1 px-5 items-center">
-                <Text className="font-medium">Change</Text>
+                <Text className="font-sans-bold">Change</Text>
               </Pressable>
             </View>
           </View>
 
           <Pressable className="bg-[#081126] rounded-full py-4 items-center mt-2">
-            <Text className="text-white font-semibold">
+            <Text className="text-white font-sans-bold">
               Cancel Subscription
             </Text>
           </Pressable>

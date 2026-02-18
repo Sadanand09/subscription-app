@@ -28,12 +28,12 @@ export default function Insights() {
         {/* Expenses */}
         <View className="mt-6 border border-black/10 rounded-2xl p-4 gap-2">
           <View className="flex-row items-center justify-between">
-            <Text className="text-xl font-bold mt-1">Expenses</Text>
-            <Text className="text-xl font-bold mt-1">${expenses.amount}</Text>
+            <Text className="text-xl font-sans-extrabold mt-1">Expenses</Text>
+            <Text className="text-xl font-sans-extrabold mt-1">-${expenses.amount}</Text>
           </View>
           <View className="flex-row items-center justify-between">
-            <Text className="text-base text-black/60">March 2026</Text>
-            <Text className="text-base text-green-600 mt-1">
+            <Text className="text-base font-sans-medium text-black/60">March 2026</Text>
+            <Text className="text-base text-green-600 font-sans-medium mt-1">
               {expenses.change}
             </Text>
           </View>
