@@ -14,6 +14,8 @@ import medium from "@/assets/icons/medium.png";
 import figma from "@/assets/icons/figma.png";
 import spotify from "@/assets/icons/spotify.png";
 import github from "@/assets/icons/github.png";
+import claude from "@/assets/icons/claude.png";
+import canva from "@/assets/icons/canva.png";
 
 export const icons = {
   home,
@@ -32,4 +34,6 @@ export const icons = {
   figma,
   spotify,
   github,
+  claude,
+  canva,
 };

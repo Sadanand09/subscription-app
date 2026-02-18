@@ -4,23 +4,14 @@ import { useState } from "react";
 import { barData } from "@/constants/data/insights";
 
 export const InsightsChart = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(3);
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const chartData = barData.map((item, index) => ({
     value: item.value,
     label: item.label,
     frontColor: selectedIndex === index ? "#EA7A53" : "#081126",
     onPress: () => setSelectedIndex(index),
-    topLabelComponent:
-      selectedIndex === index
-        ? () => (
-            <View className="bg-white p-auto mb-2">
-              <Text className="text-[#000000] text-sm text-center">
-                ${item.value}
-              </Text>
-            </View>
-          )
-        : undefined,
   }));
 
   return (
@@ -43,13 +34,57 @@ export const InsightsChart = () => {
         /* Axes */
         yAxisThickness={0}
         xAxisThickness={0}
-        yAxisTextStyle={{ color: "#6B7280" }}
-        xAxisLabelTextStyle={{ color: "#374151" }}
 
         /* Animation */
         isAnimated
         animationDuration={600}
 
+        /* Tooltip positioning */
+        leftShiftForTooltip={20}
+
+        /* Floating tooltip (pill + arrow) */
+        renderTooltip={(item: any, index: number) =>
+          selectedIndex === index ? (
+            <View style={{ alignItems: "center" }}>
+              {/* Pill */}
+              <View
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  paddingHorizontal: 10,
+                  paddingVertical: 4,
+                  borderRadius: 12,
+                  marginBottom: 4,
+                  minWidth: 52,
+                }}
+              >
+                <Text
+                  style={{
+                    color: "#000000",
+                    fontSize: 14,
+                    fontWeight: "600",
+                    textAlign: "center",
+                  }}
+                >
+                  ${item.value}
+                </Text>
+              </View>
+
+              {/* Arrow */}
+              <View
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeftWidth: 6,
+                  borderRightWidth: 6,
+                  borderTopWidth: 6,
+                  borderLeftColor: "transparent",
+                  borderRightColor: "transparent",
+                  borderTopColor: "#FFFFFF",
+                }}
+              />
+            </View>
+          ) : null
+        }
       />
     </View>
   );

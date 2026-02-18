@@ -1,5 +1,3 @@
-import { ChartData } from "@/types";
-
 export const barData = [
   { label: "Mon", value: 35 },
   { label: "Tue", value: 30 },

@@ -64,7 +64,7 @@ export const subscriptions: Subscription[] = [
   },
   {
     id: "4",
-    icon: icons.medium,
+    icon: icons.claude,
     name: "Claude",
     price: 9.84,
     billing: "per month",
@@ -73,7 +73,7 @@ export const subscriptions: Subscription[] = [
   },
   {
     id: "5",
-    icon: icons.medium,
+    icon: icons.canva,
     name: "Canva",
     price: 43.89,
     billing: "per month",
