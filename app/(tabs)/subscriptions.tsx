@@ -1,13 +1,13 @@
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { mySubscriptions } from "@/constants/data/subscriptions";
 import { SubscriptionItem } from "@/components/subscription/SubscriptionItem";
-import Header from "@/components/common/header";
+import Header from "@/components/ui/header";
+import { mySubscriptions } from "@/constants/data/subscriptions";
 import { useState } from "react";
 
 export default function Subscriptions() {
-   const [openId, setOpenId] = useState<string | null>(null);
+  const [openId, setOpenId] = useState<string | null>(null);
 
   return (
     <SafeAreaView className="flex-1 p-6 bg-[#FFF9E3]">

@@ -1,13 +1,15 @@
 import { Image, ScrollView, Text, View } from "react-native";
+
 import { SafeAreaView } from "react-native-safe-area-context";
-import { user, balance, upcoming, subscriptions } from "@/constants/data/home";
 
 import { BalanceCard } from "@/components/home/BalanceCard";
 import { UpcomingCard } from "@/components/home/UpcomingCard";
 import { SubscriptionRow } from "@/components/home/SubscriptionRow";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+
 import images from "@/constants/images";
 import { icons } from "@/constants/icons";
+import { user, balance, upcoming, subscriptions } from "@/constants/data/home";
 
 export default function Home() {
   return (
@@ -34,10 +36,7 @@ export default function Home() {
           <SectionHeader title="Upcoming" action="View all" />
         </View>
 
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        >
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {upcoming.map((item) => (
             <UpcomingCard key={item.id} {...item} />
           ))}

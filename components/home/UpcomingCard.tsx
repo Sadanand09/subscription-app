@@ -13,7 +13,9 @@ export const UpcomingCard = ({ name, price, daysLeft, icon }: Props) => (
       <Image source={icon} className="w-14 h-14" />
       <View>
         <Text className="text-lg font-sans-bold">${price.toFixed(2)}</Text>
-        <Text className="text-sm font-sans-semibold text-black/60">{daysLeft} days left</Text>
+        <Text className="text-sm font-sans-semibold text-black/60">
+          {daysLeft} days left
+        </Text>
       </View>
     </View>
 

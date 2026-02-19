@@ -1,10 +1,12 @@
-import { View, Text } from "react-native";
-import { BarChart } from "react-native-gifted-charts";
 import { useState } from "react";
+
+import { View, Text } from "react-native";
+
+import { BarChart } from "react-native-gifted-charts";
+
 import { barData } from "@/constants/data/insights";
 
 export const InsightsChart = () => {
-
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const chartData = barData.map((item, index) => ({
@@ -22,26 +24,20 @@ export const InsightsChart = () => {
         spacing={30}
         maxValue={45}
         noOfSections={4}
-
         /* Rounded bars */
         roundedTop
         roundedBottom
-
         /* Grid */
         rulesType="dashed"
         rulesColor="#D6D0B8"
-
         /* Axes */
         yAxisThickness={0}
         xAxisThickness={0}
-
         /* Animation */
         isAnimated
         animationDuration={600}
-
         /* Tooltip positioning */
         leftShiftForTooltip={20}
-
         /* Floating tooltip (pill + arrow) */
         renderTooltip={(item: any, index: number) =>
           selectedIndex === index ? (

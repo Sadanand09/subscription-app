@@ -13,5 +13,5 @@ export const SectionHeader = ({ title, action }: Props) => (
         <Text className="text-lg font-sans-semibold">{action}</Text>
       </TouchableOpacity>
     )}
-  </View> 
+  </View>
 );

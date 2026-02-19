@@ -1,15 +1,21 @@
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context';
-import images from '@/constants/images';
-import { useRouter } from 'expo-router';
+import React, { useCallback } from "react";
+import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
+
+import images from "@/constants/images";
 
 const SplashScreen = () => {
   const router = useRouter();
-  
+
+  const handleGetStarted = useCallback(() => {
+    router.replace("/(tabs)");
+  }, [router]);
+
   return (
     <SafeAreaView className="flex-1 bg-[#EA7A53]">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
+        {/* Pattern Image */}
         <View>
           <Image
             source={images.splashPattern}
@@ -17,6 +23,8 @@ const SplashScreen = () => {
             className="mt-10 w-full"
           />
         </View>
+
+        {/* Content */}
         <View className="px-6 p-12">
           <View className="items-center">
             <Text className="text-white text-4xl font-sans-extrabold mb-2">
@@ -32,7 +40,7 @@ const SplashScreen = () => {
           <TouchableOpacity
             activeOpacity={0.8}
             className="bg-white rounded-full py-4 items-center"
-            onPress={() => router.replace("/(tabs)")}
+            onPress={handleGetStarted}
           >
             <Text className="text-[#1F2937] text-lg font-sans-bold">
               Get Started
@@ -42,6 +50,7 @@ const SplashScreen = () => {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
+
 
 export default SplashScreen;

@@ -1,10 +1,12 @@
 import { ScrollView, Text, View } from "react-native";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import Header from "@/components/common/header";
 import { SubscriptionRow } from "@/components/home/SubscriptionRow";
 import { InsightsChart } from "@/components/insights/InsightsChart";
+import Header from "@/components/ui/header";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+
 import { subscriptions } from "@/constants/data/home";
 import { expenses } from "@/constants/data/insights";
 
@@ -29,10 +31,14 @@ export default function Insights() {
         <View className="mt-6 border border-black/10 rounded-2xl p-4 gap-2">
           <View className="flex-row items-center justify-between">
             <Text className="text-xl font-sans-extrabold mt-1">Expenses</Text>
-            <Text className="text-xl font-sans-extrabold mt-1">-${expenses.amount}</Text>
+            <Text className="text-xl font-sans-extrabold mt-1">
+              -${expenses.amount}
+            </Text>
           </View>
           <View className="flex-row items-center justify-between">
-            <Text className="text-base font-sans-medium text-black/60">March 2026</Text>
+            <Text className="text-base font-sans-medium text-black/60">
+              March 2026
+            </Text>
             <Text className="text-base text-green-600 font-sans-medium mt-1">
               {expenses.change}
             </Text>

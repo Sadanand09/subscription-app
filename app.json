@@ -42,7 +42,7 @@
       [
         "expo-font",
         {
-          "fonts":[
+          "fonts": [
             "./assets/fonts/PlusJakartaSans-Regular.ttf",
             "./assets/fonts/PlusJakartaSans-Medium.ttf",
             "./assets/fonts/PlusJakartaSans-SemiBold.ttf",
@@ -56,6 +56,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c3b9ee86-1db0-4b47-b1db-41f24e0d8f37"
+      }
     }
   }
 }

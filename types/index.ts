@@ -11,7 +11,7 @@ export interface Subscription {
   plan?: string;
   price: number;
   billing: string;
-  date: any;
+  date?: any;
   color?: string;
 }
 
