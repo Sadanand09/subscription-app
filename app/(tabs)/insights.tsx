@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { SubscriptionRow } from "@/components/home/SubscriptionRow";
 import { InsightsChart } from "@/components/insights/InsightsChart";
-import Header from "@/components/ui/header";
+import { Header } from "@/components/ui/header";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 import { subscriptions } from "@/constants/data/home";

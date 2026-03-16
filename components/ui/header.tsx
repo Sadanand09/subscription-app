@@ -1,5 +1,3 @@
-import React from "react";
-
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
 import { router } from "expo-router";
@@ -10,7 +8,7 @@ type Props = {
   title: string;
 };
 
-const Header = ({ title }: Props) => {
+export const Header = ({ title }: Props) => {
   return (
     <View className="flex flex-row items-center justify-between pb-6">
       <TouchableOpacity onPress={() => router.back()} className="h-16 w-16">
@@ -23,5 +21,3 @@ const Header = ({ title }: Props) => {
     </View>
   );
 };
-
-export default Header;

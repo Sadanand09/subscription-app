@@ -1,4 +1,15 @@
 import { View, Text, Image, Pressable } from "react-native";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+  withTiming,
+  interpolateColor,
+  Easing,
+} from "react-native-reanimated";
+import { useEffect } from "react";
+
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 type Props = {
   id: string;
@@ -20,12 +31,62 @@ export const SubscriptionItem = ({
   expanded,
   onPress,
 }: Props) => {
+  const progress = useSharedValue(0);
+  const scale = useSharedValue(1);
+  const clipHeight = useSharedValue(0);
+
+  useEffect(() => {
+    progress.value = withSpring(expanded ? 1 : 0, {
+      damping: 20,
+      stiffness: 150,
+    });
+    if (expanded) {
+      clipHeight.value = withSpring(260, { damping: 22, stiffness: 160 });
+    } else {
+      clipHeight.value = withTiming(0, {
+        duration: 280,
+        easing: Easing.inOut(Easing.ease),
+      });
+    }
+  }, [expanded, progress, clipHeight]);
+
+  const containerStyle = useAnimatedStyle(() => ({
+    backgroundColor: interpolateColor(
+      progress.value,
+      [0, 1],
+      ["#FFF8E7", "#8FD1BD"]
+    ),
+    transform: [{ scale: scale.value }],
+  }));
+
+  const clipStyle = useAnimatedStyle(() => ({
+    maxHeight: clipHeight.value,
+    overflow: "hidden",
+  }));
+
+  const contentStyle = useAnimatedStyle(() => ({
+    opacity: progress.value,
+    transform: [{ translateY: (1 - progress.value) * 10 }],
+  }));
+
   return (
-    <Pressable
+    <AnimatedPressable
       onPress={onPress}
-      className={`border border-black/10 rounded-2xl p-4 ${
-        expanded ? "bg-[#8FD1BD]" : "bg-[#FFF8E7]"
-      }`}
+      onPressIn={() => {
+        scale.value = withSpring(0.97, { damping: 20, stiffness: 300 });
+      }}
+      onPressOut={() => {
+        scale.value = withSpring(1, { damping: 20, stiffness: 300 });
+      }}
+      style={[
+        containerStyle,
+        {
+          borderWidth: 1,
+          borderColor: "rgba(0,0,0,0.1)",
+          borderRadius: 16,
+          padding: 16,
+        },
+      ]}
     >
       {/* TOP ROW */}
       <View className="flex-row justify-between items-center py-2">
@@ -50,8 +111,8 @@ export const SubscriptionItem = ({
       </View>
 
       {/* EXPANDED CONTENT */}
-      {expanded && (
-        <View className="mt-6 gap-4">
+      <Animated.View style={clipStyle}>
+        <Animated.View style={contentStyle} className="mt-6 gap-4">
           <View className="flex-col justify-between gap-6">
             <View className="flex-row justify-between items-center">
               <View className="flex-row gap-2">
@@ -60,7 +121,7 @@ export const SubscriptionItem = ({
                 </Text>
                 <Text className="font-sans-bold">*****8530</Text>
               </View>
-              <Pressable className="border border-black/30 rounded-full py-1 px-5  items-center">
+              <Pressable className="border border-black/30 rounded-full py-1 px-5 items-center">
                 <Text className="font-sans-bold">Manage</Text>
               </Pressable>
             </View>
@@ -83,8 +144,8 @@ export const SubscriptionItem = ({
               Cancel Subscription
             </Text>
           </Pressable>
-        </View>
-      )}
-    </Pressable>
+        </Animated.View>
+      </Animated.View>
+    </AnimatedPressable>
   );
 };

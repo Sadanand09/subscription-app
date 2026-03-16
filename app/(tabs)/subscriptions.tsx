@@ -1,10 +1,13 @@
+import { useState } from "react";
+
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { SubscriptionItem } from "@/components/subscription/SubscriptionItem";
-import Header from "@/components/ui/header";
+import { AnimatedEntry } from "@/components/ui/AnimatedEntry";
+import { Header } from "@/components/ui/header";
+
 import { mySubscriptions } from "@/constants/data/subscriptions";
-import { useState } from "react";
 
 export default function Subscriptions() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -19,15 +22,16 @@ export default function Subscriptions() {
         showsVerticalScrollIndicator={false}
       >
         <View className="gap-4">
-          {mySubscriptions.map((item) => (
-            <SubscriptionItem
-              key={item.id}
-              {...item}
-              expanded={openId === item.id}
-              onPress={() =>
-                setOpenId((prev) => (prev === item.id ? null : item.id))
-              }
-            />
+          {mySubscriptions.map((item, index) => (
+            <AnimatedEntry key={item.id} index={index} delayPerIndex={80} duration={400}>
+              <SubscriptionItem
+                {...item}
+                expanded={openId === item.id}
+                onPress={() =>
+                  setOpenId((prev) => (prev === item.id ? null : item.id))
+                }
+              />
+            </AnimatedEntry>
           ))}
         </View>
       </ScrollView>
